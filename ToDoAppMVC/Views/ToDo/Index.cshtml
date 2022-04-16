@@ -1,0 +1,32 @@
+﻿@model IEnumerable<DBconfig.Models.Todo>
+
+@{
+
+}
+
+<h1>
+    @ViewData["title"]
+</h1>
+<table class="table table-hover table-sm">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Id)</th>
+            <th>@Html.DisplayNameFor(model => model.Work)</th>
+            <th>@Html.DisplayNameFor(model => model.Date)</th>
+            <th>@Html.DisplayNameFor(model => model.Status)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.Work</td>
+            <td>@item.Date</td>
+            <td>@item.Status</td>
+        
+        </tr>
+        }
+        <tr><td colspan="5"><strong>Tổng số: @Model.Count()</strong></td></tr>
+    </tbody>
+</table>
