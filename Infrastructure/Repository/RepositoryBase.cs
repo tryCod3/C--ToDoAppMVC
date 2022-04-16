@@ -9,15 +9,18 @@ namespace Infrastructure.Repository
     public abstract class RepositoryBase<T> : IRepositoryBase<T> where T : class
     {
 
-        private List<T> _list;
+        private static List<T> _list;
 
      
-        public List<T> getListTodo()
+        public  List<T> getListTodo()
         {
             if (_list == null)
                 _list = new List<T>();
+
             return _list;
         }
+
+
 
         public T Create(T model)
         {
@@ -25,6 +28,7 @@ namespace Infrastructure.Repository
             {
                 if(model == null)
                     return null;
+             
                 getListTodo().Add(model);
                 return model;
             }catch(Exception e)

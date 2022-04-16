@@ -9,7 +9,7 @@ namespace DBconfig.Models
     public class Todo
     {
         [Required , DisplayName("Id")]
-        public string Id { get; set; }
+        public int Id { get; set; }
 
         [Required, DisplayName("Work")]
         public string Work { get; set; }
@@ -19,17 +19,14 @@ namespace DBconfig.Models
         [Required, DisplayName("Status")]
         public bool Status { get; set; } = false;
 
-        public Todo()
+        public Todo() { }
+
+        public Todo(int Id)
         {
-            Id = "";
+            this.Id = Id;
             Work = "";
             Status = false;
-        }
-        public Todo(string id, string work, bool status)
-        {
-            Id = id;
-            Work = work;
-            Status = status;
+      
         }
 
         public override bool Equals(object obj)
@@ -45,7 +42,7 @@ namespace DBconfig.Models
         public override int GetHashCode()
         {
             int hashCode = -1966402320;
-            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Id);
+            hashCode = hashCode * -1521134295 + EqualityComparer<int>.Default.GetHashCode(Id);
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Work);
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Date);
             hashCode = hashCode * -1521134295 + Status.GetHashCode();

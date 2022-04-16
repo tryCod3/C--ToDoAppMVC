@@ -7,5 +7,7 @@ namespace Infrastructure.Interface
     {
         // code tính năng riêng của todo
         IEnumerable<Todo> GetAll();
+
+        int getIdMax();
     }
 }

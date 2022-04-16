@@ -1,6 +1,7 @@
 ﻿
 using System.Web.Mvc;
 using Infrastructure.Interface;
+using DBconfig.Models;
 
 namespace ToDoAppMVC.Controllers
 {
@@ -20,6 +21,22 @@ namespace ToDoAppMVC.Controllers
         {
             ViewData["Title"] = "Get All List ToDo";
             return View(Todo.GetAll());
+        }
+        
+
+        [HttpGet]
+        public ActionResult Create()
+        {
+            return View(new Todo(Todo.getIdMax() + 1));
+        }
+
+        [HttpPost]
+        public ActionResult Create(Todo model)
+        {
+            if(!ModelState.IsValid)
+                return View(model);
+            Todo.Create(model);
+            return View("Index" , Todo.GetAll());
         }
     }
 }

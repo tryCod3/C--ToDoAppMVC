@@ -1,6 +1,7 @@
-﻿using DBconfig.Models;
-using Infrastructure.Interface;
+﻿using System.Linq;
 using System.Collections.Generic;
+using DBconfig.Models;
+using Infrastructure.Interface;
 
 namespace Infrastructure.Repository
 {
@@ -9,6 +10,16 @@ namespace Infrastructure.Repository
         public IEnumerable<Todo> GetAll()
         {
             return getListTodo();
+        }
+
+        public int getIdMax()
+        {
+            int index = 1;
+            if(getListTodo().Count > 0)
+            {
+                return getListTodo().Max(x => x.Id);
+            }
+            return index;
         }
     }
 }
