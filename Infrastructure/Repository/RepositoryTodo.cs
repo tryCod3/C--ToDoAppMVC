@@ -14,12 +14,9 @@ namespace Infrastructure.Repository
 
         public int getIdMax()
         {
-            int index = 1;
-            if(getListTodo().Count > 0)
-            {
-                return getListTodo().Max(x => x.Id);
-            }
-            return index;
+            Todo t = getListTodo().OrderByDescending(x => x.Id).FirstOrDefault();
+            if (t == null) return 0;
+            return t.Id;            
         }
     }
 }

@@ -26,7 +26,7 @@ namespace DBconfig.Models
             this.Id = Id;
             Work = "";
             Status = false;
-      
+            
         }
 
         public override bool Equals(object obj)

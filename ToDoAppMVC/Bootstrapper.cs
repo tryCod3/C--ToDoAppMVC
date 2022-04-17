@@ -23,7 +23,7 @@ namespace ToDoAppMVC
             // register all your components with the container here
             // it is NOT necessary to register your controllers
             // e.g. container.RegisterType<ITestService, TestService>();
-            container.RegisterType<IRepositoryTodo , RepositoryTodo>();
+            container.RegisterType<IRepositoryTodo , RepositoryTodo>(new ContainerControlledLifetimeManager());
 
             return container;
         }
