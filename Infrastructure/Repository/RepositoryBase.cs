@@ -9,15 +9,15 @@ namespace Infrastructure.Repository
     public abstract class RepositoryBase<T> : IRepositoryBase<T> where T : class
     {
 
-        private static List<T> _list;
+        private static List<T> ListToDo;
 
      
-        public  List<T> getListTodo()
+        public  List<T> GetListTodo()
         {
-            if (_list == null)
-                _list = new List<T>();
+            if (ListToDo == null)
+                ListToDo = new List<T>();
 
-            return _list;
+            return ListToDo;
         }
 
 
@@ -28,8 +28,8 @@ namespace Infrastructure.Repository
             {
                 if(model == null)
                     return null;
-             
-                getListTodo().Add(model);
+
+                GetListTodo().Add(model);
                 return model;
             }catch(Exception e)
             {
@@ -44,7 +44,7 @@ namespace Infrastructure.Repository
                 return null;
             T entity = Get(model);
             if (entity == null) { return null; }
-            getListTodo().Remove(entity);
+            GetListTodo().Remove(entity);
             return model;
         }
 
@@ -52,7 +52,7 @@ namespace Infrastructure.Repository
         {
             if (model == null)
                 return null;
-            T _model = getListTodo().Find(todo => todo.Equals(model));
+            T _model = GetListTodo().Find(todo => todo.Equals(model));
             return _model;
         }
 

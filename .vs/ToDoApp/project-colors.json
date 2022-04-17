@@ -1,0 +1,26 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "aab1c7d0-0492-43e8-bdac-750d2ff2208a": {
+      "ProjectGuid": "aab1c7d0-0492-43e8-bdac-750d2ff2208a",
+      "DisplayName": "ToDoAppMVC",
+      "ColorIndex": 0
+    },
+    "2c251e26-0759-446d-83fb-f17b7d8c557d": {
+      "ProjectGuid": "2c251e26-0759-446d-83fb-f17b7d8c557d",
+      "DisplayName": "Infrastructure",
+      "ColorIndex": 1
+    },
+    "5815d66b-13df-468c-b71b-439bdaa6f310": {
+      "ProjectGuid": "5815d66b-13df-468c-b71b-439bdaa6f310",
+      "DisplayName": "DBconfig",
+      "ColorIndex": 2
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 3
+}

@@ -16,10 +16,10 @@ bld/
 [Ll]ogs/
 
 # Visual Studio 2015/2017 cache/options directory
-.vs/
+.vs/	
 
 #package
-packages/
+[Pp]ackages/
 
 # MSTest test Results
 [Tt]est[Rr]esult*/

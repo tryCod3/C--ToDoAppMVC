@@ -9,12 +9,12 @@ namespace Infrastructure.Repository
     {
         public IEnumerable<Todo> GetAll()
         {
-            return getListTodo();
+            return GetListTodo();
         }
 
         public int getIdMax()
         {
-            Todo t = getListTodo().OrderByDescending(x => x.Id).FirstOrDefault();
+            Todo t = GetListTodo().OrderByDescending(x => x.Id).FirstOrDefault();
             if (t == null) return 0;
             return t.Id;            
         }
