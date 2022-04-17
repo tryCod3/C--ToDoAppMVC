@@ -39,5 +39,11 @@ namespace ToDoAppMVC.Controllers
             Todo.Create(model);
             return View("Index" , Todo.GetAll());
         }
+
+        [HttpPost]
+        public ActionResult Delete(Todo model)
+        {
+            return View("Index", Todo.GetAll());
+        }
     }
 }
